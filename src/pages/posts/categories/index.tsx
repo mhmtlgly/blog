@@ -13,7 +13,7 @@ export default function AllCategories(props: AllCategoriesType) {
         <meta name="description" content="A list of all blog categories" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <h2 className="text-2xl font-black uppercase mb-10">
+      <h2 className="text-2xl font-black uppercase mb-4">
         categories
         <span className="text-base font-normal ml-1">
           ({props.categories.total})
