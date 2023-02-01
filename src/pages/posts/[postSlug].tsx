@@ -45,6 +45,7 @@ export default function SinglePost(props: SinglePostType) {
         ) : null}
 
         <List
+          className="grid gap-3"
           items={props.post.fields.references}
           renderItem={(reference) => (
             <div key={reference}>
