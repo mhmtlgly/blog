@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Link from "next/link"
 import { GetStaticProps } from "next"
 
 import type { AllPostsType } from "src/types/allPostsType"
@@ -6,7 +7,6 @@ import type { AllCategoriesType } from "src/types/allCategoriesType"
 import { BlogPost, List, ReadMoreLink } from "src/components"
 import { useInterSectionObserver } from "src/hooks"
 import { getDataHomePage } from "src/utils"
-import Link from "next/link"
 
 export default function Home(props: AllPostsType & AllCategoriesType) {
   const { loadMoreRef, page } = useInterSectionObserver()
@@ -26,7 +26,7 @@ export default function Home(props: AllPostsType & AllCategoriesType) {
         items={props.posts.items.slice(0, postsPerPage * page)}
         renderItem={(post) => (
           <BlogPost
-            className="border p-4 rounded-lg flex flex-col gap-4"
+            className="border p-4 rounded-lg flex flex-col gap-4 bg-gradient-to-r from-gray-50 to-white"
             key={post.fields.slug}
           >
             <List

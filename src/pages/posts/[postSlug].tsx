@@ -1,5 +1,6 @@
 import Head from "next/head"
 import { GetStaticProps } from "next"
+import Link from "next/link"
 
 import type { SinglePostType } from "src/types/singlePostType"
 import {
@@ -7,7 +8,6 @@ import {
   getStaticPropsSinglePostPage,
 } from "src/utils"
 import { Content, List } from "src/components"
-import Link from "next/link"
 
 export default function SinglePost(props: SinglePostType) {
   return (
@@ -19,7 +19,7 @@ export default function SinglePost(props: SinglePostType) {
       </Head>
       <article className="mx-auto max-w-prose">
         <List
-          className="flex items-center gap-2 mb-3 w-full border flex-wrap p-4 rounded-lg bg-gray-50"
+          className="flex items-center gap-2 mb-3 w-full border flex-wrap p-4 rounded-lg bg-gradient-to-bl from-gray-50 to-white"
           items={props.post.fields.category}
           renderItem={(category) => (
             <Link
@@ -36,17 +36,13 @@ export default function SinglePost(props: SinglePostType) {
             </Link>
           )}
         />
-
         <h2 className="text-2xl mb-5 font-semibold">
           {props.post.fields.title}
         </h2>
-
         <Content>{props.post.fields.body}</Content>
-
         {props.post.fields.references?.length > 0 ? (
           <h6 className="capitalize mt-20">References</h6>
         ) : null}
-
         <List
           className="grid gap-3"
           items={props.post.fields.references}
