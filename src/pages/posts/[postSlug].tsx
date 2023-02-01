@@ -49,6 +49,7 @@ export default function SinglePost(props: SinglePostType) {
           renderItem={(reference) => (
             <div key={reference}>
               <a
+                href={reference}
                 target={"_blank"}
                 rel="noopener noreferrer"
                 className="text-xs text-gray-500 underline decoration-dotted decoration-gray-300 underline-offset-4 cursor-pointer hover:text-gray-900"
