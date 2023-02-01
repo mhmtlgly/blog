@@ -1,0 +1,5 @@
+export * from "./getDataHomePage"
+export * from "./getDataSinglePostPage"
+export * from "./getDataAllCategoriesPage"
+export * from "./getDataSingleCategoryPage"
+export * from "./getDataAllPostsPage"

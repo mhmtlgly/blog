@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base {
+  html {
+    @apply text-gray-900 dark:text-green-200 bg-gray-300 dark:bg-red-500;
+  }
+  .dark {
+    @apply text-green-200;
+  }
+} */
