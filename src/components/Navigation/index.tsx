@@ -8,6 +8,7 @@ type NavigationProps = {
 
 export const Navigation = ({ className }: NavigationProps) => (
   <List
+    as="nav"
     className={`flex flex-col gap-4 lg:flex-row ${className}`}
     items={links}
     renderItem={(link) => (

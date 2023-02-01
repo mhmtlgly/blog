@@ -20,28 +20,18 @@ module.exports = {
             "background-color": config("theme.colors.gray.700"),
           },
         },
-      })
-      addBase({
-        ".dark": {
-          color: config("theme.colors.gray.300"),
-          img: {
-            filter: "grayscale(1)",
-          },
-          a: {
+      }),
+        addBase({
+          ".dark": {
             color: config("theme.colors.gray.300"),
-          },
-        },
-      })
-      addBase({
-        header: {
-          nav: {
-            svg: {
-              height: config("theme.height.6"),
-              width: config("theme.width.6"),
+            img: {
+              filter: "grayscale(1)",
+            },
+            a: {
+              color: config("theme.colors.gray.300"),
             },
           },
-        },
-      })
+        })
     },
   ],
 }

@@ -12,7 +12,7 @@ export const DarkMode = ({ className }: DarkModeProps) => {
 
   return (
     <button onClick={() => dispatch(setDarkMode())}>
-      <Icon icon="ph:sun-thin" height={40} width={40} className={className} />
+      <Icon icon="ph:sun-thin" height={32} width={32} className={className} />
     </button>
   )
 }

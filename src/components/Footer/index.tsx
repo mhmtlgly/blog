@@ -1,3 +1,10 @@
 export const Footer = () => {
-  return <footer className="p-4 bg-gray-100">footer</footer>
+  const date = new Date().getFullYear()
+  return (
+    <footer className="p-4 bg-gray-100">
+      <div>
+        <small>&copy; copyright {date}</small>
+      </div>
+    </footer>
+  )
 }
