@@ -13,7 +13,7 @@ export const Content = ({ children }: ContentProps) => {
 
   return (
     <ReactMarkdown
-      className="max-w-full"
+      className="max-w-full mt-10"
       components={{
         code({ node, inline, className, children, style, ...props }) {
           const match = /language-(\w+)/.exec(className || "")
@@ -34,7 +34,7 @@ export const Content = ({ children }: ContentProps) => {
         },
         h2({ node, className, children, style, ...props }) {
           return (
-            <h2 className="text-xl mb-4 mt-10 first-of-type:mt-20" {...props}>
+            <h2 className="text-xl mb-4 mt-10 first-of-type:mt-0" {...props}>
               {children}
             </h2>
           )
