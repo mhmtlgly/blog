@@ -6,6 +6,7 @@ import type { AllCategoriesType } from "src/types/allCategoriesType"
 import { BlogPost, List, ReadMoreLink } from "src/components"
 import { useInterSectionObserver } from "src/hooks"
 import { getDataHomePage } from "src/utils"
+import Link from "next/link"
 
 export default function Home(props: AllPostsType & AllCategoriesType) {
   const { loadMoreRef, page } = useInterSectionObserver()
@@ -32,15 +33,28 @@ export default function Home(props: AllPostsType & AllCategoriesType) {
               className="flex gap-2 flex-wrap"
               items={post.fields.category}
               renderItem={(category) => (
-                <img
+                <Link
+                  href={`/posts/categories/${category.fields.slug}`}
                   key={category.fields.slug}
-                  src={category.fields.icon.fields.file.url}
-                  alt=""
-                  className="h-8 w-8"
-                />
+                  // className="grid gap-2 justify-items-center"
+                  className="flex gap-2 items-center border px-4 py-2 rounded-full transition-all hover:bg-gray-200"
+                >
+                  <img
+                    key={category.fields.slug}
+                    src={category.fields.icon.fields.file.url}
+                    alt=""
+                    className="w-8 aspect-square grayscale-[0.5] hover:grayscale-0"
+                  />
+                  <small>{category.fields.title}</small>
+                </Link>
               )}
             />
-            <h2 className="text-xl">{post.fields.title}</h2>
+            <small>
+              {new Intl.DateTimeFormat("en-US", {
+                dateStyle: "long",
+              }).format(new Date(post.sys.createdAt))}
+            </small>
+            <h2 className="text-xl mb-4">{post.fields.title}</h2>
             <ReadMoreLink href={`/posts/${post.fields.slug}`} />
           </BlogPost>
         )}

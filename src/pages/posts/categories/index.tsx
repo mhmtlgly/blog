@@ -28,7 +28,7 @@ export default function AllCategories(props: AllCategoriesType) {
           <Link
             key={category.fields.slug}
             href={`/posts/categories/${category.fields.slug}`}
-            className="inline-flex items-center gap-2 border px-4 py-2 rounded-full group hover:bg-gray-100"
+            className="inline-flex items-center gap-2 border px-4 py-2 rounded-full group hover:bg-gray-100 dark:hover:bg-gray-900"
           >
             <img
               src={category.fields.icon.fields.file.url}

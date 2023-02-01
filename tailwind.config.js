@@ -25,7 +25,7 @@ module.exports = {
           ".dark": {
             color: config("theme.colors.gray.300"),
             img: {
-              filter: "grayscale(1)",
+              // filter: "grayscale(1)",
             },
             a: {
               color: config("theme.colors.gray.300"),

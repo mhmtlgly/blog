@@ -19,17 +19,20 @@ export default function SinglePost(props: SinglePostType) {
       </Head>
       <article className="mx-auto max-w-prose">
         <List
-          className="flex items-center gap-2 mb-3"
+          className="flex items-center gap-2 mb-3 w-full border flex-wrap p-4 rounded-lg bg-gray-50"
           items={props.post.fields.category}
           renderItem={(category) => (
             <Link
               href={`/posts/categories/${category.fields.slug}`}
               key={category.fields.slug}
+              // className="grid gap-2 justify-items-center"
+              className="flex gap-2 items-center border px-4 py-2 rounded-full transition-all hover:bg-gray-200"
             >
               <img
                 src={category.fields.icon.fields.file.url}
-                className="w-10 h-10"
+                className="w-8 aspect-square grayscale-[0.5] hover:grayscale-0"
               />
+              <small>{category.fields.title}</small>
             </Link>
           )}
         />
